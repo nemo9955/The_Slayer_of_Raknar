@@ -15,6 +15,7 @@ public class Entitate {
     protected Rectangle poly;
     protected int team;
     protected int viata;
+    protected float speed = 0.3f;
 
     public Entitate(float x, float y){
         this.x=x;
@@ -53,5 +54,47 @@ public class Entitate {
         y += amont;
         poly.setY(y);
     }
+
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    public Rectangle getPoly() {
+        return poly;
+    }
+
+    public void setPoly(Rectangle poly) {
+        this.poly = poly;
+    }
+
+    public int getTeam() {
+        return team;
+    }
+
+    public void setTeam(int team) {
+        this.team = team;
+    }
+
+    public int getViata() {
+        return viata;
+    }
+
+    public void setViata(int viata) {
+        this.viata = viata;
+    }
+    
+    
 
 }

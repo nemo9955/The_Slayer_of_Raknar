@@ -1,25 +1,30 @@
 package game.GamePlay;
 
-import game.Entitati.Entitate;
-import game.Entitati.Player;
 
-import org.newdawn.slick.Color;
+import game.Entitati.Player;
+import game.Extra.Camera;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.tiled.TiledMap;
 
 public class GameplayState extends BasicGameState {
 
     private final int ID;
     
-    private Entitate player ;
+    private Camera camera ;
+    
+    private Player player;
+    private TiledMap map;
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        player = new Player(100,100);
+        player = new Player(100, 100);
+        map = new TiledMap("res/nivele/nivel (1).tmx");
+        camera = new Camera(map.getWidth() * map.getTileWidth(), map.getHeight() * map.getTileHeight());
     }
 
     @Override
@@ -28,7 +33,9 @@ public class GameplayState extends BasicGameState {
     }
 
     @Override
-    public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException { 
+    public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+        camera.translate(g, player);
+        map.render(0, 0);
         player.render(gc, sbg, g);
     }
 

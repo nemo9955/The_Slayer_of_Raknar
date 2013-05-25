@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32" backgroundcolor="#b8b8b8">
+ <properties>
+  <property name="gravity" value="2"/>
+  <property name="speed" value="2"/>
+ </properties>
+ <tileset firstgid="1" name="stone" tilewidth="32" tileheight="32">
+  <properties>
+   <property name="solid" value=""/>
+  </properties>
+  <image source="stone.png" width="192" height="160"/>
+ </tileset>
+ <tileset firstgid="31" name="pipe" tilewidth="32" tileheight="32">
+  <properties>
+   <property name="spike" value=""/>
+  </properties>
+  <image source="pipe.png" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="47" name="stone darker" tilewidth="32" tileheight="32">
+  <properties>
+   <property name="solid" value=""/>
+  </properties>
+  <image source="stone_darker.png" width="192" height="160"/>
+ </tileset>
+ <tileset firstgid="77" name="decorations" tilewidth="32" tileheight="32">
+  <properties>
+   <property name="solid" value=""/>
+  </properties>
+  <image source="decorations.png" width="256" height="256"/>
+ </tileset>
+ <tileset firstgid="141" name="small dark tile" tilewidth="32" tileheight="32">
+  <image source="small_dark_tile.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="145" name="stone textured" tilewidth="32" tileheight="32">
+  <image source="stone_textured.png" width="192" height="160"/>
+ </tileset>
+ <tileset firstgid="175" name="void" tilewidth="32" tileheight="32">
+  <image source="void.png" width="128" height="32"/>
+ </tileset>
+ <tileset firstgid="179" name="spike" tilewidth="32" tileheight="32">
+  <image source="spike.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="435" name="arrows" tilewidth="32" tileheight="32">
+  <image source="arrows.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="691" name="stopper" tilewidth="32" tileheight="32">
+  <image source="stopper.png" width="125" height="32"/>
+ </tileset>
+ <layer name="BG" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztw8EJAAAMA6Hb/5GZO0dBwVVTVVVVVVVVVVXV5w+KM2sE
+  </data>
+ </layer>
+ <layer name="solid" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt0jEKACEMRUE773/jZTsLizUr+JEZSBvyIK0BrOmnD9hERxYdWXRk0ZFFR5YbOm5oeCV09MlUdqSp9CR2jL42pXeMZv/35xcBAAAAAKh5AD8HAP0=
+  </data>
+ </layer>
+</map>

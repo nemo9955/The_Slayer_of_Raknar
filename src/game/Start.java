@@ -10,8 +10,8 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Start extends StateBasedGame {
 
     private final static String titlu = "The Slayer of Raknar";
-    private static int width = 500;
-    private static int height = 500;
+    public static int WIDTH = 500;
+    public static int HEIGHT = 500;
 
     //  aici o sa initializam stagiile ;
     //	public static final int MENUSTATE = 0 ;
@@ -29,7 +29,7 @@ public class Start extends StateBasedGame {
 
     public static void main(String[] args) throws SlickException {
         AppGameContainer app = new AppGameContainer(new Start(titlu));
-        app.setDisplayMode(width, height, false);
+        app.setDisplayMode(WIDTH, HEIGHT, false);
         app.setResizable(true);
         app.setShowFPS(true);
         //        app.setTargetFrameRate(60);
