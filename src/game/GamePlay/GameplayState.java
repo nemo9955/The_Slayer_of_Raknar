@@ -1,6 +1,7 @@
 package game.GamePlay;
 
 
+import game.Start;
 import game.Entitati.Player;
 import game.Extra.Camera;
 import game.MapBlocks.BlockMap;
@@ -33,6 +34,8 @@ public class GameplayState extends BasicGameState {
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+        Start.setHEIGHT(gc.getHeight());
+        Start.setWIDTH(gc.getWidth());
         player.update(gc, sbg, delta);
     }
 

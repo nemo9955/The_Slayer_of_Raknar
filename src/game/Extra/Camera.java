@@ -32,18 +32,18 @@ public class Camera {
          */
 
         // axa x
-        if( cen.x - Start.WIDTH / 2 < 0 )
+        if( cen.x - Start.getWIDTH() / 2 < 0 )
             transX = 0;
-        else if( cen.x + Start.WIDTH / 2 > mapWidth )
-            transX = -mapWidth + Start.WIDTH;
-        else transX = (int) -cen.x + Start.WIDTH / 2;
+        else if( cen.x + Start.getWIDTH() / 2 > mapWidth )
+            transX = -mapWidth + Start.getWIDTH();
+        else transX = (int) -cen.x + Start.getWIDTH() / 2;
 
         // axa y
-        if( cen.y - Start.HEIGHT / 2 < 0 )
+        if( cen.y - Start.getHEIGHT() / 2 < 0 )
             transY = 0;
-        else if( cen.y + Start.HEIGHT / 2 > mapHeight )
-            transY = -mapHeight + Start.HEIGHT;
-        else transY = (int) -cen.y + Start.HEIGHT / 2;
+        else if( cen.y + Start.getHEIGHT() / 2 > mapHeight )
+            transY = -mapHeight + Start.getHEIGHT();
+        else transY = (int) -cen.y + Start.getHEIGHT() / 2;
 
         g.translate(transX, transY);
     }

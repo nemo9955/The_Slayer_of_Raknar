@@ -53,10 +53,7 @@
  </layer>
  <layer name="solid" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJztz8EJAEAIA0Htv2m/FiCIdzOw/yQC+FluDxiQrete+AAAAAAAAAAAsKUA0mQABg==
+   eJzt17ENADAIAzD4/+muHFCpBWwpezImAtgsXxe4IEu6m7ABAACAf/mdAAAAAEx3AOVoAAc=
   </data>
  </layer>
- <objectgroup name="cladiri" width="50" height="50">
-  <object name="casa1" type="dead" x="667" y="206" width="139" height="136"/>
- </objectgroup>
 </map>

@@ -10,8 +10,8 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Start extends StateBasedGame {
 
     private final static String titlu = "The Slayer of Raknar";
-    public static int WIDTH = 500;
-    public static int HEIGHT = 500;
+    private static int WIDTH = 500;
+    private static int HEIGHT = 500;
 
     //  aici o sa initializam stagiile ;
     //	public static final int MENUSTATE = 0 ;
@@ -36,19 +36,20 @@ public class Start extends StateBasedGame {
         app.start();
     }
 
-}
-//Keylos was here !!!! MUHAHA
-/// nemo was here beachhhhh
+    public static int getWIDTH() {
+        return WIDTH;
+    }
 
-/*
-    ca sa adaugi Slick la joc :
-    - clk dr p proiec -> proprietati
-    - selectezi tabul "Libraries"
-    - add external jars
-    - adaugi alea 4 jar-uri de sunt in folderul lib de il adaugai
-    - te duci la lwjgl.jar , dai expand -> native library location -> dublu clik
-    - dai pe "external folder" , selectezi lib -> natives -> windows 
+    public static void setWIDTH(int wIDTH) {
+        WIDTH = wIDTH;
+    }
+
+    public static int getHEIGHT() {
+        return HEIGHT;
+    }
+
+    public static void setHEIGHT(int hEIGHT) {
+        HEIGHT = hEIGHT;
+    }
     
-    in momentul asta ar trebui sa poti rula jocul , daca nu suna-ma
-
-*/
+}
