@@ -11,7 +11,6 @@ public class Entitate extends Physics {
 
     
     protected Image img;
-    protected Rectangle poly;
     protected int team;
     protected int viata;
 

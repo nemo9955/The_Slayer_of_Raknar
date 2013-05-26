@@ -15,18 +15,30 @@ public class Player extends Entitate {
     public void update(GameContainer gc, StateBasedGame sbg, int delta) {
         if( gc.getInput().isKeyDown(Input.KEY_W) ) {
             modY(-speed * delta);
+            if(colid()){
+                modY(speed * delta);
+            }
         }
 
         if( gc.getInput().isKeyDown(Input.KEY_S) ) {
             modY(speed * delta);
+            if(colid()){
+                modY(-speed * delta);
+            }
         }
 
         if( gc.getInput().isKeyDown(Input.KEY_D) ) {
             modX(speed * delta);
+            if(colid()){
+                modX(-speed * delta);
+            }
         }
 
         if( gc.getInput().isKeyDown(Input.KEY_A) ) {
             modX(-speed * delta);
+            if(colid()){
+                modX(speed * delta);
+            }
         }
     }
 

@@ -1,5 +1,7 @@
 package game.MapBlocks;
 
+import org.newdawn.slick.geom.Rectangle;
+
 public class BlockSolid extends Block {
 
     public BlockSolid(int x, int y) {
@@ -14,4 +16,7 @@ public class BlockSolid extends Block {
         exists=true;
     }
     
+    protected void Zon() {
+        zon= new Rectangle (x*32 , y*32 , 32 , 32);
+    }
 }

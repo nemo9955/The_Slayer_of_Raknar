@@ -3,6 +3,7 @@ package game.GamePlay;
 
 import game.Entitati.Player;
 import game.Extra.Camera;
+import game.MapBlocks.BlockMap;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -19,12 +20,15 @@ public class GameplayState extends BasicGameState {
     
     private Player player;
     private TiledMap map;
+    
+    private static BlockMap blockMap ;
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         player = new Player(100, 100);
         map = new TiledMap("res/nivele/nivel (1).tmx");
         camera = new Camera(map.getWidth() * map.getTileWidth(), map.getHeight() * map.getTileHeight());
+        blockMap = new BlockMap(map);
     }
 
     @Override
@@ -47,4 +51,18 @@ public class GameplayState extends BasicGameState {
     public int getID() {
         return ID;
     }
+
+    public Camera getCamera() {
+        return camera;
+    }
+
+    public TiledMap getMap() {
+        return map;
+    }
+
+    public static BlockMap getBlockMap() {
+        return blockMap;
+    }
+    
+    
 }
