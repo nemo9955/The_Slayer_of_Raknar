@@ -7,15 +7,13 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Entitate {
+public class Entitate extends Physics {
 
-    protected float x;
-    protected float y;
+    
     protected Image img;
     protected Rectangle poly;
     protected int team;
     protected int viata;
-    protected float speed = 0.3f;
 
     public Entitate(float x, float y){
         this.x=x;
