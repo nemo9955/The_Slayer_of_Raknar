@@ -11,7 +11,7 @@ public class Entitate extends Physics {
     protected Image img[][];
     protected short activ = 0 , frame = 1;
     protected       int interval = 0  ;
-    protected final int intervalTo = 150 ;
+    protected final int intervalTo = 200 ;
     // jos=0 , stanga=1 , dreapta=2 , sus=3
     
     protected boolean isMoving = false ;
@@ -35,6 +35,11 @@ public class Entitate extends Physics {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) {
 
     }
+    
+    
+    
+    
+    //                 getters
 
     protected void setViata() {
         viata = 100;

@@ -57,7 +57,7 @@ public class Player extends Entitate {
             interval += delta;
         else{
             frame=0;
-            interval=0;
+            interval=intervalTo-1;
         }
         
         if( interval > intervalTo ) {
@@ -84,14 +84,16 @@ public class Player extends Entitate {
 
     protected void Imagini() {
         SpriteSheet sheet = null;
+        
+        dimW = 32;
+        dimH = 48;
+        
         try {
-            sheet = new SpriteSheet("res/entitati/player.png", 32, 48);
+            sheet = new SpriteSheet("res/entitati/player.png", (int)dimW, (int)dimH);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        dimW = 32;
-        dimH = 48;
-
+        
         img = new Image[sheet.getVerticalCount()][sheet.getHorizontalCount()];
 
         //        System.out.println(img[0].length);
