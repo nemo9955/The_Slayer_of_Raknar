@@ -2,12 +2,12 @@ package game.Entitati;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
-import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Player extends Entitate {
+    
+    
 
     public Player(float x, float y) {
         super(x, y);
@@ -52,22 +52,8 @@ public class Player extends Entitate {
                 modX(speed * delta);
             }
         }
-
-        if( isMoving == true )
-            interval += delta;
-        else{
-            frame=0;
-            interval=intervalTo-1;
-        }
         
-        if( interval > intervalTo ) {
-            interval = 0;
-            frame++;
-        }
-        
-        if( frame == img[0].length )
-            frame = 0;
-
+        Animatie(delta);
     }
 
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) {
@@ -81,27 +67,10 @@ public class Player extends Entitate {
     protected void setViata() {
         viata = 150;
     }
-
-    protected void Imagini() {
-        SpriteSheet sheet = null;
-        
+    
+    protected String LoadSheet(){
         dimW = 32;
         dimH = 48;
-        
-        try {
-            sheet = new SpriteSheet("res/entitati/player.png", (int)dimW, (int)dimH);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        
-        img = new Image[sheet.getVerticalCount()][sheet.getHorizontalCount()];
-
-        //        System.out.println(img[0].length);
-
-        for( int j = 0; j < sheet.getVerticalCount(); j++ )
-            for( int i = 0; i < sheet.getHorizontalCount(); i++ ) {
-                img[j][i] = sheet.getSprite(i, j);
-            }
-
+        return "res/entitati/player.png" ;
     }
 }

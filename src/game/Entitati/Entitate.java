@@ -3,6 +3,7 @@ package game.Entitati;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -23,7 +24,7 @@ public class Entitate extends Physics {
     public Entitate(float x, float y) {
         this.x = x;
         this.y = y;
-        Imagini();
+        Imagini( LoadSheet() );
         setPoly(x, y, dimW, dimH);
         setViata();
     }
@@ -36,10 +37,47 @@ public class Entitate extends Physics {
 
     }
     
+    protected void Animatie(int delta){
+
+        if( isMoving == true )
+            interval += delta;
+        else{
+            frame=0;
+            interval=intervalTo-1;
+        }
+        
+        if( interval > intervalTo ) {
+            interval = 0;
+            frame++;
+        }
+        
+        if( frame == img[0].length )
+            frame = 0;
+
+    }
     
-    
-    
-    //                 getters
+    protected String LoadSheet(){
+        dimW = 32;
+        dimH = 48;
+        return null;
+    }
+
+    protected void Imagini(String link) {
+        SpriteSheet sheet = null;
+        
+        try {
+            sheet = new SpriteSheet( link , (int)dimW, (int)dimH);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        img = new Image[sheet.getVerticalCount()][sheet.getHorizontalCount()];
+
+        for( int j = 0; j < sheet.getVerticalCount(); j++ )
+            for( int i = 0; i < sheet.getHorizontalCount(); i++ ) {
+                img[j][i] = sheet.getSprite(i, j);
+            }
+    }
 
     protected void setViata() {
         viata = 100;
@@ -47,9 +85,6 @@ public class Entitate extends Physics {
 
     protected void setPoly(float x, float y, float w, float h) {
         poly = new Rectangle (x,y,w,h);
-    }
-
-    protected void Imagini() {
     }
 
     protected void modX(float amont) {
@@ -61,6 +96,9 @@ public class Entitate extends Physics {
         y += amont;
         poly.setY(y);
     }
+    
+    
+    //                 getters
 
     public float getX() {
         return x;
