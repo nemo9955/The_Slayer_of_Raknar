@@ -1,6 +1,5 @@
 package game.GamePlay;
 
-
 import game.Start;
 import game.Entitati.Player;
 import game.Extra.Camera;
@@ -16,18 +15,18 @@ import org.newdawn.slick.tiled.TiledMap;
 public class GameplayState extends BasicGameState {
 
     private final int ID;
-    
-    private Camera camera ;
-    
+
+    private Camera camera;
+
     private Player player;
     private TiledMap map;
-    
-    private static BlockMap blockMap ;
+
+    private static BlockMap blockMap;
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        player = new Player(100, 100);
         map = new TiledMap("res/nivele/nivel (1).tmx");
+        player = new Player(map.getObjectX(0, 0), map.getObjectY(0, 0));
         camera = new Camera(map.getWidth() * map.getTileWidth(), map.getHeight() * map.getTileHeight());
         blockMap = new BlockMap(map);
     }
@@ -66,6 +65,5 @@ public class GameplayState extends BasicGameState {
     public static BlockMap getBlockMap() {
         return blockMap;
     }
-    
-    
+
 }

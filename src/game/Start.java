@@ -26,7 +26,11 @@ public class Start extends StateBasedGame {
         // aici o sa le adaugam in joc
         addState(new GameplayState(GAMEPLAYSTATE));
     }
-
+    /**
+     * 
+     * @param args
+     * @throws SlickException
+     */
     public static void main(String[] args) throws SlickException {
         AppGameContainer app = new AppGameContainer(new Start(titlu));
         app.setDisplayMode(WIDTH, HEIGHT, false);
